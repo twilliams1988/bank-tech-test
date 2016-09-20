@@ -74,11 +74,11 @@ class Ui
   end
 
   def print_balance
-    puts"********** 🐷 PiggyBank 🐷  Account Balance**********"
+    puts"********** 🐷 PiggyBank 🐷  Account Balance **********"
     puts"*"*48
     # width = @statement.transactions.flatten.max.to_s.size+2
     @statement.transactions.each { |x|
-      puts x.join("   ")
+      puts x.join("\t")
     }
     puts"*"*48
     # return @statement.transactions
@@ -107,7 +107,9 @@ class Ui
   def last_transaction
     puts"*"*40
     puts"Your last transaction:"
-    puts @statement.transactions.last.inspect
+    puts @statement.transactions[0].join("\t")
+    puts @statement.transactions.last.join("\t")
+    # puts @statement.transactions.last.inspect
     puts"*"*40
   end
 end

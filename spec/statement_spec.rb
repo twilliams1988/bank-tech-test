@@ -9,7 +9,7 @@ describe Statement do
     it { is_expected.to respond_to(:update_statement).with(3).arguments }
 
     it 'adds the transaction to the statement array' do
-      subject.update_statement(10,nil,10)
+      subject.update_statement(10,0,10)
       puts subject.transactions.inspect
       expect(subject.transactions.count).to eq(2)
     end

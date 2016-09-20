@@ -13,12 +13,12 @@ class Account
 
   def credit(amount)
     @balance += amount
-    @statement.update_statement(amount, nil, @balance)
+    @statement.update_statement(amount, 0, @balance)
   end
 
   def debit(amount)
     @balance -= amount
-    @statement.update_statement(nil, amount, @balance)
+    @statement.update_statement(0, amount, @balance)
   end
 
 end
